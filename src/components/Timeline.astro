@@ -1,0 +1,18 @@
+---
+const diplomas = [
+  { year: "2024", title: "BTS SIO", institution: "Promeo Formation Compiègne" },
+  { year: "2021", title: "BAC PRO MEI", institution: "Lycée Mireille Grenet Compiègne" },
+];
+---
+
+<section class="timeline">
+    {diplomas.map(diploma => (
+      <div class="flex items-center my-4">
+        <div class="flex-none w-24 text-xl font-bold text-blue-600">{diploma.year}</div>
+        <div class="flex-grow bg-gray-100 p-4 rounded-lg shadow">
+          <h3 class="text-lg font-semibold">{diploma.title}</h3>
+          <p class="text-gray-700">{diploma.institution}</p>
+        </div>
+      </div>
+    ))}
+  </section>
