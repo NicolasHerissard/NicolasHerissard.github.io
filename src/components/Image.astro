@@ -1,0 +1,48 @@
+---
+const { img1, img2, img3 } = Astro.props;
+
+const images = [
+    img1,
+    img2,
+    img3,
+]
+---
+
+<div class="relative overflow-hidden max-w-full mx-auto flex items-center justify-center rounded-lg">
+    {
+        images.map((img, index) => (
+            <img src={img} alt={`Slide ${index + 1}`} class={`slides ${index === 0 ? 'active' : ''} w-full`}/>
+        ))
+    }
+</div>
+
+<style>
+    .slides {
+      display: none;
+    }
+  
+    .active {
+      display: block;
+    }
+  </style>
+
+<script>
+    let slideIndex = 0
+    const slides = document.getElementsByClassName('slides')
+    const totalSlides = slides.length
+
+    function showSlides() {
+    for (let i = 0; i < totalSlides; i++) {
+      slides[i].classList.remove('active');
+    }
+    slideIndex++;
+    if (slideIndex > totalSlides) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].classList.add('active');
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+
+  window.addEventListener('DOMContentLoaded', showSlides)
+
+</script>
