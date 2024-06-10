@@ -7,23 +7,25 @@
 
   <div id="myModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
     <div class="bg-white p-14 rounded-lg overflow-hidden shadow-xl w-2/4">
-      <div class="p-4 flex items-center justify-center">
-        <label class="w-24">Email : </label>
-        <input class="w-1/2 border border-black border-solid rounded p-2" id="email" name="email" type="text" placeholder="Email">
-      </div>
-      <div class="p-4 flex items-center justify-center">
-        <label class="w-24">Sujet : </label>
-        <input class="w-1/2 border border-black border-solid rounded p-2" id="subject" name="subject" type="text" placeholder="Sujet" />
-      </div>
-      <div class="p-4 flex items-center justify-center">
-        <label class="w-40">Message : </label>
-        <textarea class="resize-none border border-black border-solid rounded p-2" id="message" name="message"
-                  cols="30" rows="6" placeholder="Message">
+      <form id="contact-form">
+        <div class="p-4 flex items-center justify-center">
+          <label class="w-24">Email : </label>
+          <input class="w-1/2 border border-black border-solid rounded p-2" id="email" name="email" type="text" placeholder="Email">
+        </div>
+        <div class="p-4 flex items-center justify-center">
+          <label class="w-24">Sujet : </label>
+          <input class="w-1/2 border border-black border-solid rounded p-2" id="subject" name="subject" type="text" placeholder="Sujet" />
+        </div>
+        <div class="p-4 flex items-center justify-center">
+          <label class="w-40">Message : </label>
+          <textarea class="resize-none border border-black border-solid rounded p-2" id="message" name="message"
+                    cols="30" rows="6" placeholder="Message">
         </textarea>
-      </div>
-      <div class="px-4 py-3 border-gray-200 flex justify-center items-center">
-        <button class="px-4 py-2 bg-blue-500 text-white rounded">Envoyer</button>
-      </div>
+        </div>
+        <div class="px-4 py-3 border-gray-200 flex justify-center items-center">
+          <button class="px-4 py-2 bg-blue-500 text-white rounded">Envoyer</button>
+        </div>
+      </form>
       <div class="px-4 py-3 border-gray-200 flex justify-end">
         <button id="closeModalBtn" class="px-4 py-2 bg-red-500 text-white rounded">Fermer</button>
       </div>
@@ -31,12 +33,11 @@
   </div>
 </div>
 
-<script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modal = document.getElementById('myModal');
-
-    const email = document.getElementById('email');
 
     openModalBtn?.addEventListener('click', () => {
       modal?.classList.remove('hidden');
@@ -52,5 +53,27 @@
       }
     });
 
+    document.getElementById("contact-form").addEventListener('submit', (event) => {
+      event.preventDefault()
 
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const subject = document.getElementById("subject").value;
+
+      Email.send({
+        Host: "",
+        Username: "nicolas.herissard@gmail.com",
+        Password: "",
+        To: email,
+        From: email,
+        Subject: subject,
+        Body: `Email: ${email} <br> Message: ${message}`,
+      }).then((msg) => {
+        alert(`Email envoyé avec succès`)
+        console.log("Succès : " + msg)
+      }).catch((err) => {
+        alert(`Echec de lenvoi de l'email`)
+        console.log("Erreur : " + err)
+      });
+    });
 </script>
