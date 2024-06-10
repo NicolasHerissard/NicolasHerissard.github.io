@@ -8,41 +8,42 @@ const images = [
 ]
 ---
 
-<div class="relative overflow-hidden max-w-full mx-auto flex items-center justify-center rounded-lg">
-    {
-        images.map((img, index) => (
-            <img src={img} alt={`Slide ${index + 1}`} class={`slides ${index === 0 ? 'active' : ''} w-full`}/>
-        ))
-    }
+<div class="relative overflow-hidden max-w-full mx-auto">
+  {images.map((image, index) => (
+    <img src={image} alt={`Slide ${index + 1}`} class={`slides ${index === 0 ? 'active' : ''} w-full`} />
+  ))}
+  <button class="prev absolute top-1/2 transform -translate-y-1/2 left-0 bg-white text-black opacity-75 hover:opacity-100 p-2" onclick="plusSlides(-1)">&#10094;</button>
+  <button class="next absolute top-1/2 transform -translate-y-1/2 right-0 bg-white text-black opacity-75 hover:opacity-100 p-2" onclick="plusSlides(1)">&#10095;</button>
 </div>
 
 <style>
-    .slides {
-      display: none;
-    }
-  
-    .active {
-      display: block;
-    }
-  </style>
+  .slides {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+</style>
 
 <script>
-    let slideIndex = 0
-    const slides = document.getElementsByClassName('slides')
-    const totalSlides = slides.length
+  let slideIndex = 1;
+  const slides = document.getElementsByClassName('slides');
+  const totalSlides = slides.length;
 
-    function showSlides() {
+  function showSlide(n: number) {
+    if (n > totalSlides) { slideIndex = 1 }
+    if (n < 1) { slideIndex = totalSlides }
     for (let i = 0; i < totalSlides; i++) {
       slides[i].classList.remove('active');
     }
-    slideIndex++;
-    if (slideIndex > totalSlides) {
-      slideIndex = 1;
-    }
     slides[slideIndex - 1].classList.add('active');
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
   }
 
-  window.addEventListener('DOMContentLoaded', showSlides)
+  function plusSlides(n: number) {
+    showSlide(slideIndex += n);
+  }
 
+  // Initialize the first slide
+  showSlide(slideIndex);
 </script>
