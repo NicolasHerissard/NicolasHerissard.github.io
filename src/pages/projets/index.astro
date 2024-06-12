@@ -25,7 +25,7 @@ import { projectsLists } from "../../data/projects";
                             <div class="border-t border-gray-300 p-4">
                                 <p class="mb-4">{e.description}</p>
                                 <div class="flex flex-col space-y-4">
-                                    <a href={e.url} class="text-blue-500 underline">Source</a>
+                                    <a target="_blank" href={e.url} class="text-blue-500 underline">Source</a>
                                     <div class="flex flex-wrap space-x-4">
                                         {e.tech.map((tech) => (
                                             <span class="bg-gray-200 text-center rounded px-2 py-1 overflow-wrap break-words">{tech}</span>
