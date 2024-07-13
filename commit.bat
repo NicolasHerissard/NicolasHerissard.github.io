@@ -1,3 +1,5 @@
+@echo off
+
 git status
 git add .
 
