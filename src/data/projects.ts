@@ -28,17 +28,10 @@ export const projectsLists = [
         url: "https://github.com/NicolasHerissard/api-telematos"
     },
     {
-        name: "WorkService Front-End",
-        description: "Application Web de réservations de services entre entreprise ou particulier",
+        name: "docker database",
+        description: "Docker image pour la base de données",
         date: "2024",
-        tech: ["Javascript", "NextJS", "TailwindCSS"],
-        url: "https://github.com/NicolasHerissard/workservice-front-end.git"
-    },
-    {
-        name: "WorkService Back-End",
-        description: "API pour l'application Web WorkService",
-        date: "2024",
-        tech: ["PHP", "Laravel", "SQL"],
-        url: "https://github.com/NicolasHerissard/workservice-back-end.git"
-    },
+        tech: ["Docker", "MariaDB"],
+        url: "https://github.com/NicolasHerissard/Docker-Database",
+    }
 ]
