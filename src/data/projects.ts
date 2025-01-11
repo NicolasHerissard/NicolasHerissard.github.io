@@ -33,5 +33,12 @@ export const projectsLists = [
         date: "2024",
         tech: ["Docker", "MariaDB"],
         url: "https://github.com/NicolasHerissard/Docker-Database",
-    }
+    },
+    {
+        name: "HouseCamp",
+        description: "Application web de réservation de logement",
+        date: "2025",
+        tech: ["Next.js", "MySQL", "Tailwind CSS", "Prisma"],
+        url: "https://github.com/NicolasHerissard/HouseCamp",
+    },
 ]
