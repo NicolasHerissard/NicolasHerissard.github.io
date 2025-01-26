@@ -41,4 +41,11 @@ export const projectsLists = [
         tech: ["Next.js", "MySQL", "Tailwind CSS", "Prisma"],
         url: "https://github.com/NicolasHerissard/HouseCamp",
     },
+    {
+        name: "HouseCamp API",
+        description: "API pour l'application web de réservation de logement",
+        date: "2025",
+        tech: ["TypeScript", "Nest.js", "MySQL"],
+        url: "https://github.com/NicolasHerissard/api-housecamp",
+    },
 ]
