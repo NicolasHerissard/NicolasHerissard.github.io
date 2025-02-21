@@ -14,11 +14,11 @@ export const projectsLists = [
         url: "https://github.com/NicolasHerissard/Telematos"
     },
     {
-        name: "Moulagapp",
-        description: "Gestion de compte bancaire",
+        name: "Gestion bancaire",
+        description: "Gestion de compte bancaire pour son solde et ses transactions",
         date: "2024",
         tech: ["Java", "JavaFX", "SQL"],
-        url: "https://github.com/NicolasHerissard/Moulagapp"
+        url: "https://github.com/NicolasHerissard/Gestion-bancaire"
     },
     {
         name: "api-telematos",
@@ -29,7 +29,7 @@ export const projectsLists = [
     },
     {
         name: "docker database",
-        description: "Docker image pour la base de données",
+        description: "Docker image avec une base de données MySQL et PHPMyAdmin qui peut être utilisée par plusieurs applications",
         date: "2024",
         tech: ["Docker", "MariaDB"],
         url: "https://github.com/NicolasHerissard/Docker-Database",
