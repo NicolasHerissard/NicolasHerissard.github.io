@@ -3,7 +3,6 @@ import { getAvailabilityStatus } from "../data/notion"
 
 const availabilityStatus = await getAvailabilityStatus()
 const color = availabilityStatus === "Non disponible" ? "red" : "green" as string
-console.log(color)
 ---
 
 <div class="dark:bg-black w-full h-full">

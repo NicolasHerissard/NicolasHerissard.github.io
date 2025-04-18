@@ -1,11 +1,8 @@
 ---
 import Header from '../../src/components/Header.astro'
 import Timeline from '../components/Timeline.astro'
-import { sendEmail } from '../data/email'
 
 const title = "Portfolio"
-
-//sendEmail("nicolas.herissard@gmail.com", "Test", "Bonjour")
 ---
 
 <!DOCTYPE html>
@@ -13,6 +10,7 @@ const title = "Portfolio"
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/terminal.ico" type="image/x-icon">
 	<title>{title}</title>
 </head>
 <body class="bg-gradient-to-br from-white via-gray-200 to-blue-100 dark:from-black dark:via-gray-900 dark:to-gray-800">
