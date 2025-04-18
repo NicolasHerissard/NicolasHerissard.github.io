@@ -1,23 +1,12 @@
-FROM node:lts-alpine
+FROM node:lts-alpine AS runtime
+WORKDIR /app
 
-WORKDIR /usr/src/app
-
-COPY package.json /usr/src/app/package.json
-
-RUN npm install -g npm@latest
-
-RUN npm install -g astro
+COPY . .
 
 RUN npm install
+RUN npm run build
 
-COPY . /usr/src/app/
-
-COPY ./src /usr/src/app/src
-
-COPY ./public /usr/src/app/public
-
-COPY ./.astro /usr/src/app/.astro
-
+ENV HOST=0.0.0.0
+ENV PORT=4321
 EXPOSE 4321
-
 CMD ["npm", "run", "start"]

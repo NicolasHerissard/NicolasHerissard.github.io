@@ -8,5 +8,9 @@ const GITHUB_REPO = "https://github.com/NicolasHerissard/NicolasHerissard.github
 // https://astro.build/config
 export default defineConfig({
   site: GITHUB_URL,
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  server: {
+    host: true,
+    port: 4321,
+  }
 });
