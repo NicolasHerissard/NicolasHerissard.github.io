@@ -1,0 +1,93 @@
+---
+const root = 'root@portfolio:~#';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/terminal.ico" type="image/x-icon">
+    <title>Présentation</title>
+</head>
+<body class="bg-black text-green-600 font-mono">
+    <div>
+        <div id="terminal" class="space-y-4">
+            <pre class="text-lime-400 font-mono text-xs sm:text-sm leading-tight mb-4">
+                ____   ____   ____  ______ ______ ____   __     ____ ____ 
+                / __ \ / __ \ / __ \/_  __// ____// __ \ / /    /  _// __ \
+               / /_/ // / / // /_/ / / /  / /_   / / / // /     / / / / / /
+              / ____// /_/ // _, _/ / /  / __/  / /_/ // /___ _/ / / /_/ / 
+             /_/     \____//_/ |_| /_/  /_/     \____//_____//___/ \____/  
+             
+             Bienvenue dans mon terminal de présentation.
+             Tapez 'help' pour afficher les commandes disponibles.
+            </pre>
+        </div>
+        <div class="flex mt-4">
+            <span class="text-green-500 mr-2">{root}</span>
+            <input
+                id="terminal-input"
+                type="text"
+                class="bg-transparent outline-none text-green-500 w-full"
+                autofocus
+            />
+        </div>
+    </div>
+    <script type="module">
+        const commands = {
+            whoami: {utils: "Affiche une petite présentation de moi-même", text: "Je suis Nicolas HERISSARD, développeur passionné."},
+            skills: {utils: "Affiche mes compétences", text: "JavaScript, TypeScript, React, Next.js, TailwindCSS..."},
+            contact: {utils: "Affiche mes informations de contact", text: 'nicolas.herissard@gmail.com | <a href="https://github.com/NicolasHerissard">https://github.com/NicolasHerissard</a> | <a href="https://www.linkedin.com/in/nicolas-herissard-374930166/">https://www.linkedin.com/in/nicolas-herissard-374930166/</a>'},
+            clear: {utils: "Efface le terminal", text: "clear"},
+            help: {utils: "Affiche la liste des commandes", text: "help"},
+            projects: {utils: "Redirige vers mes projets", text: `<a href="/projets">Mes projets</a>`},
+        }
+
+        const root = 'root@portfolio:~#';
+
+        const terminal = document.getElementById("terminal");
+        const input = document.querySelector("input");
+
+        input?.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter') {
+                const command = input.value.trim();
+                input.value = '';
+                if(commands[command]) {
+                    if(commands[command].text === 'clear') {
+                        terminal.innerHTML = '';
+                    }
+                    else if(commands[command].text === 'help') {
+                        let helpText = 'Voici la liste des commandes disponibles :<br>';
+                        for (let c in commands) {
+
+                            if(c != 'help') helpText += `- ${c} : ${commands[c].utils}<br>`;
+                        }
+                        terminal.innerHTML += `\n${root} ${command}<br>${helpText}<br>`;
+                    }
+                    else {
+                        terminal.innerHTML += `
+                        <div>
+                            <span class="text-green-500">${root}</span> ${command}
+                            <div class="ml-6">${commands[command].text}</div>
+                        </div>`;
+                    }
+                }
+                else if(command === '') {
+                    terminal.innerHTML += `
+                        <div>
+                            <span class="text-green-500">${root}</span>
+                        </div>`
+                }
+                else {
+                    terminal.innerHTML += `
+                        <div>
+                            <span class="text-green-500">${root}</span> ${command}
+                            <div class="ml-6 text-red-400">Commande inconnue</div>
+                        </div>`;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
