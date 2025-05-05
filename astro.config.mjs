@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
+import tailwind from '@astrojs/tailwind';
 
 const GITHUB_URL = "https://NicolasHerissard.github.io"
 const GITHUB_REPO = "https://github.com/NicolasHerissard/NicolasHerissard.github.io.git"
