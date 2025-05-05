@@ -1,8 +1,7 @@
 ---
 import Header from "../../components/Header.astro"
-import { projectsLists } from "../../data/projects";
 import { fetchGitHubRepos } from "../../data/github";
-
+import '../../styles/global.css'
 const GITHUB_USERNAME = "NicolasHerissard";
 const repos = await fetchGitHubRepos(GITHUB_USERNAME);
 ---

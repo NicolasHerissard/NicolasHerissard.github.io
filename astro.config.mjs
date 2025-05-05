@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 
 const GITHUB_URL = "https://NicolasHerissard.github.io"
 const GITHUB_REPO = "https://github.com/NicolasHerissard/NicolasHerissard.github.io.git"
@@ -8,7 +8,9 @@ const GITHUB_REPO = "https://github.com/NicolasHerissard/NicolasHerissard.github
 // https://astro.build/config
 export default defineConfig({
   site: GITHUB_URL,
-  integrations: [tailwind()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   server: {
     host: true,
     port: 4321,
