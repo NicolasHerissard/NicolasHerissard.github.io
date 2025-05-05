@@ -1,54 +1,76 @@
-# Astro Starter Kit: Basics
+# NicolasHerissard.github.io
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenue sur le dépôt de mon portfolio personnel, conçu pour présenter mes projets, compétences et expériences professionnelles. Ce site est développé avec [Astro](https://astro.build/) et stylisé à l'aide de [Tailwind CSS](https://tailwindcss.com/).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+🔗 **Site en ligne** : [nicolasherissard.github.io](https://nicolasherissard.github.io)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠️ Technologies utilisées
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **[Astro](https://astro.build/)** : Framework moderne pour la création de sites statiques rapides et optimisés.
+- **[Tailwind CSS](https://tailwindcss.com/)** : Framework CSS utilitaire pour un design rapide et réactif.
+- **[TypeScript](https://www.typescriptlang.org/)** : Superset de JavaScript pour un typage statique.
+- **[Docker](https://www.docker.com/)** : Conteneurisation pour un environnement de développement cohérent.
+- **[GitHub Pages](https://pages.github.com/)** : Hébergement gratuit de sites statiques directement depuis GitHub.
 
-## 🚀 Project Structure
+## 📁 Structure du projet
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+├── public/ # Fichiers statiques (images, favicon, etc.)
+├── src/ # Code source du site
+│ ├── components/ # Composants réutilisables
+│ ├── layouts/ # Gabarits de mise en page
+│ └── pages/ # Pages du site
+├── .github/workflows/ # Fichiers de configuration pour GitHub Actions
+├── .vscode/ # Paramètres spécifiques à Visual Studio Code
+├── Dockerfile # Fichier de configuration pour Docker
+├── compose.yaml # Configuration pour Docker Compose
+├── package.json # Dépendances et scripts du projet
+├── tailwind.config.mjs # Configuration de Tailwind CSS
+├── tsconfig.json # Configuration de TypeScript
+└── astro.config.mjs # Configuration d'Astro
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Démarrage rapide
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Prérequis
 
-## 🧞 Commands
+- [Node.js](https://nodejs.org/) (version 18 ou supérieure)
+- [Docker](https://www.docker.com/) (optionnel, pour l'utilisation de conteneurs)
 
-All commands are run from the root of the project, from a terminal:
+### Installation
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. **Cloner le dépôt :**
 
-## 👀 Want to learn more?
+   ```bash
+   git clone https://github.com/NicolasHerissard/NicolasHerissard.github.io.git
+   cd NicolasHerissard.github.io
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2. **Installer les dépendances :**
+
+   ```bash
+   npm install
+   ```
+
+3. **Démarrer le serveur de développement :**
+
+   ```bash
+   npm run dev
+   ```
+   Le site sera accessible à l'adresse http://localhost:4321.
+
+### Utilisation avec Docker
+    ```bash
+    docker compose up
+    ```
+
+## 🧪 Scripts disponibles
+
+- `npm run dev` : Lance le serveur de développement.
+- `npm run build` : Compile le site pour la production.
+- `npm run preview` : Prévisualise le site compilé.
+- `npm run format` : Formate le code avec Prettier.
+
+## 🧩 Déploiement
+
+Le site est automatiquement déployé sur **GitHub Pages** via **GitHub Actions**.  
+Chaque push sur la branche `main` déclenche un workflow qui construit et déploie automatiquement le site.
