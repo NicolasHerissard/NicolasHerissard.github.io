@@ -1,19 +1,24 @@
 ---
-const diplomas = [
-  { year: "2024-2025", title: "Licence Pro RGI", institution: "Promeo Beauvais" },
-  { year: "2022-2024", title: "BTS SIO", institution: "Promeo Formation Compiègne" },
-  { year: "2021", title: "BAC PRO MEI", institution: "Lycée Mireille Grenet Compiègne" },
+const diplomes = [
+  { year: "2024-2025", title: "Licence Pro RGI", institution: "Promeo Beauvais", status: "En cours"},
+  { year: "2022-2024", title: "BTS SIO", institution: "Promeo Formation Compiègne", status: "Obtenu"},
+  { year: "2021", title: "BAC PRO MEI", institution: "Lycée Mireille Grenet Compiègne", status: "Obtenu" },
 ];
 ---
 
 <section class="timeline">
-    {diplomas.map(diploma => (
-      <div class="flex items-center my-4 md:px-3 px-3">
-        <div class="flex-none w-24 text-xl font-bold text-blue-600">{diploma.year}</div>
-        <div class="flex-grow bg-gray-100 p-4 rounded-lg shadow">
-          <h3 class="text-lg font-semibold">{diploma.title}</h3>
-          <p class="text-gray-700">{diploma.institution}</p>
-        </div>
+  {diplomes.map(diplome => (
+    <div class="flex items-center my-4 md:px-3 px-3">
+      <div class="flex-none w-24 text-xl font-bold text-blue-600">
+        {diplome.year}
       </div>
-    ))}
-  </section>
+      <div class="flex-grow bg-gray-100 p-4 rounded-lg shadow relative">
+        <span class="absolute top-2 right-2 bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded">
+          {diplome.status}
+        </span>
+        <h3 class="text-lg font-semibold">{diplome.title}</h3>
+        <p class="text-gray-700">{diplome.institution}</p>
+      </div>
+    </div>
+  ))}
+</section>

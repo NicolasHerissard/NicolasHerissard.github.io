@@ -20,7 +20,7 @@ const repos = await fetchGitHubRepos(GITHUB_USERNAME);
       
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {repos.map((repo: any) => (
-            <div class="bg-white/60 backdrop-blur-lg border border-slate-200 rounded-3xl p-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-blue-400 group dark:bg-white/60">
+            <div class="bg-white/60 backdrop-blur-lg border border-slate-200 rounded-3xl p-6 shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-orange-400 dark:bg-white/60">
               <h2 class="text-xl font-semibold mb-3 text-slate-800 group-hover:text-blue-500 transition-colors">
                 {repo.name}
               </h2>
